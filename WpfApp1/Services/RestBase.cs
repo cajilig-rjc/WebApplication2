@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace WpfApp1.Services
@@ -9,7 +10,9 @@ namespace WpfApp1.Services
         private readonly string BaseUrl = "https://localhost:44345";
         public RestBase()
         {
-            _httpContext = new HttpClient();          
+            _httpContext = new HttpClient();  
+            // for JwtBearer auth
+            _httpContext.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "your token");
         }
 
         public async Task<HttpResponseMessage> HttpGetAsync(string endpoint)
