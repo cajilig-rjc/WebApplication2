@@ -7,7 +7,7 @@ namespace WpfApp1.Services
     public class RestBase
     {
         private readonly HttpClient _httpContext;
-        private readonly string BaseUrl = "https://localhost:44345";
+        private readonly string BaseUrl = "http://localhost:5000";
         public RestBase()
         {
             _httpContext = new HttpClient();  
